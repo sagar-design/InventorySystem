@@ -129,8 +129,20 @@
                                 </ul>
                             </li>
                             <li><a href="#" class="text-dark">Places</a></li>
-                            <li><a href="#" class="text-dark">Sales</a></li>
-                            <li><a href="#" class="text-dark">Items</a></li>
+                            <li><a href="#" class="text-dark">Sales</a>
+                                <ul class="sub-menu">
+                                    <li><a href="../Sales/NewSales.aspx" class="text-dark">New Sales</a></li>
+                                    <li><a href="../Sales/SalesList.aspx" class="text-dark">Sales List</a></li>
+                                    <li><a href="../Sales/NewSalesReturn.aspx" class="text-dark">New Sales Return</a></li>
+                                    <li><a href="../Sales/SalesReturnList.aspx" class="text-dark">Sales Return List</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="text-dark">Items</a>
+                                <ul class="sub-menu">
+                                    <li><a href="../Items/NewItems.aspx" class="text-dark">New Item</a></li>
+                                    <li><a href="../Items/ItemsList.aspx" class="text-dark">Items List</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#" class="text-dark">Purchase</a></li>
                             <li><a href="#" class="text-dark">Expenses</a></li>
                             <li><a href="#" class="text-dark">Suppliers</a></li>

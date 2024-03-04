@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InventoryProject</RootNamespace>
     <AssemblyName>InventoryProject</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44379</IISExpressSSLPort>
@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Users\hp\Downloads\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -50,10 +55,6 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
@@ -86,11 +87,21 @@
     <Content Include="Customers\CustomerList.aspx" />
     <Content Include="Customers\NewCustomer.aspx" />
     <Content Include="Dashboard.aspx" />
+    <Content Include="Items\BrandsList.aspx" />
+    <Content Include="Items\CategoriesList.aspx" />
+    <Content Include="Items\ItemsList.aspx" />
+    <Content Include="Items\NewBrand.aspx" />
+    <Content Include="Items\NewCategory.aspx" />
+    <Content Include="Items\NewItems.aspx" />
     <Content Include="LoginPages\Login.aspx" />
     <Content Include="Places\CountriesList.aspx" />
     <Content Include="Places\NewCountry.aspx" />
     <Content Include="Places\NewState.aspx" />
     <Content Include="Places\StatesList.aspx" />
+    <Content Include="Sales\NewSales.aspx" />
+    <Content Include="Sales\NewSalesReturn.aspx" />
+    <Content Include="Sales\SalesList.aspx" />
+    <Content Include="Sales\SalesReturnList.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -123,6 +134,48 @@
     </Compile>
     <Compile Include="Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Items\BrandsList.aspx.cs">
+      <DependentUpon>BrandsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Items\BrandsList.aspx.designer.cs">
+      <DependentUpon>BrandsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Items\CategoriesList.aspx.cs">
+      <DependentUpon>CategoriesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Items\CategoriesList.aspx.designer.cs">
+      <DependentUpon>CategoriesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Items\ItemsList.aspx.cs">
+      <DependentUpon>ItemsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Items\ItemsList.aspx.designer.cs">
+      <DependentUpon>ItemsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Items\NewBrand.aspx.cs">
+      <DependentUpon>NewBrand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Items\NewBrand.aspx.designer.cs">
+      <DependentUpon>NewBrand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Items\NewCategory.aspx.cs">
+      <DependentUpon>NewCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Items\NewCategory.aspx.designer.cs">
+      <DependentUpon>NewCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Items\NewItems.aspx.cs">
+      <DependentUpon>NewItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Items\NewItems.aspx.designer.cs">
+      <DependentUpon>NewItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginPages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -173,6 +226,34 @@
     </Compile>
     <Compile Include="LoginPages\ForgetPassword.aspx.designer.cs">
       <DependentUpon>ForgetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\NewSales.aspx.cs">
+      <DependentUpon>NewSales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\NewSales.aspx.designer.cs">
+      <DependentUpon>NewSales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\NewSalesReturn.aspx.cs">
+      <DependentUpon>NewSalesReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\NewSalesReturn.aspx.designer.cs">
+      <DependentUpon>NewSalesReturn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SalesList.aspx.cs">
+      <DependentUpon>SalesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\SalesList.aspx.designer.cs">
+      <DependentUpon>SalesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SalesReturnList.aspx.cs">
+      <DependentUpon>SalesReturnList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\SalesReturnList.aspx.designer.cs">
+      <DependentUpon>SalesReturnList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Users\NewUser.aspx.cs">
       <DependentUpon>NewUser.aspx</DependentUpon>
