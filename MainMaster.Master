@@ -1,0 +1,164 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainMaster.master.cs" Inherits="InventoryProject.MainMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <style>
+        .nav-link:hover .text-white {
+            color: #fff;
+        }
+
+        #menuToggle {
+            position: relative;
+            cursor: pointer;
+        }
+
+            #menuToggle input {
+                display: block;
+                width: 40px;
+                height: 32px;
+                position: absolute;
+                top: -7px;
+                left: -5px;
+                cursor: pointer;
+                opacity: 0;
+                z-index: 2;
+            }
+
+            #menuToggle span {
+                display: block;
+                width: 33px;
+                height: 4px;
+                margin-bottom: 5px;
+                background: #cdcdcd;
+                border-radius: 3px;
+                transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+            }
+
+            #menuToggle input:checked ~ span {
+                opacity: 1;
+                transform: rotate(45deg) translate(-2px, -1px);
+                background: #232323;
+            }
+
+                #menuToggle input:checked ~ span:nth-last-child(3) {
+                    opacity: 0;
+                    transform: rotate(0deg) scale(0.2, 0.2);
+                }
+
+                #menuToggle input:checked ~ span:nth-last-child(2) {
+                    transform: rotate(-45deg) translate(0, -1px);
+                }
+
+        #menu {
+            position: absolute;
+            width: 300px;
+            padding: 50px;
+            padding-top: 125px;
+            background: #ededed;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+            transform-origin: 0% 0%;
+            transform: translate(-100%, 0);
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+            left: 0;
+            top: 0;
+            margin-top: 60px;
+        }
+
+            #menu li {
+                padding: 10px 0;
+                font-size: 22px;
+            }
+
+        #menuToggle input:checked ~ ul {
+            transform: none;
+        }
+
+        .sub-menu {
+            display: none;
+        }
+
+            .sub-menu.active {
+                display: block;
+            }
+
+        .main-content {
+            margin-top: 50px; /* Adjusted top margin */
+            text-align: center; /* Center align the content */
+        }
+
+        .dashboard-item {
+            margin-top: 20px;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Navigation Menu -->
+                <div class="">
+                    <nav id="menuToggle">
+                        <input type="checkbox" />
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <ul id="menu" class="p-0">
+                            <li><a href="#" class="text-dark">Dashboard</a></li>
+                            <li><a href="#" class="text-dark">Users</a>
+                                <ul class="sub-menu">
+                                    <li><a href="../Users/NewUser.aspx" class="text-dark">New User</a></li>
+                                    <li><a href="../Users/UserList.aspx" class="text-dark">Users List</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="text-dark">Customers</a>
+                                <ul class="sub-menu">
+                                    <!-- <li><a href="../Customers/NewCustomer.aspx" class="text-dark">New Customer</a></li> -->
+                                </ul>
+                            </li>
+                            <li><a href="#" class="text-dark">Places</a></li>
+                            <li><a href="#" class="text-dark">Sales</a></li>
+                            <li><a href="#" class="text-dark">Items</a></li>
+                            <li><a href="#" class="text-dark">Purchase</a></li>
+                            <li><a href="#" class="text-dark">Expenses</a></li>
+                            <li><a href="#" class="text-dark">Suppliers</a></li>
+                            <li><a href="#" class="text-dark">Reports</a></li>
+                            <li><a href="#" class="text-dark">SMS</a></li>
+                            <li><a href="#" class="text-dark">Settings</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- Main Content Area -->
+            <div class="col-md-8 main-content mx-auto">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+        </div>
+    </form>
+
+    <script>
+        const menuItems = document.querySelectorAll('.sub-menu');
+
+        menuItems.forEach(item => {
+            item.parentElement.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
