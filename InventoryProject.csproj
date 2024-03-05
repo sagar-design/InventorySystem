@@ -86,7 +86,6 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Customers\CustomerList.aspx" />
     <Content Include="Customers\NewCustomer.aspx" />
-    <Content Include="Dashboard.aspx" />
     <Content Include="Items\BrandsList.aspx" />
     <Content Include="Items\CategoriesList.aspx" />
     <Content Include="Items\ItemsList.aspx" />
@@ -128,13 +127,6 @@
     </Compile>
     <Compile Include="Customers\NewCustomer.aspx.designer.cs">
       <DependentUpon>NewCustomer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Dashboard.aspx.cs">
-      <DependentUpon>Dashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Dashboard.aspx.designer.cs">
-      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Items\BrandsList.aspx.cs">
       <DependentUpon>BrandsList.aspx</DependentUpon>
@@ -310,7 +302,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Users\UserImages\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

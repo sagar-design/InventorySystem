@@ -128,7 +128,7 @@
                             </li>
                             <li><a href="#" class="text-dark">Customers</a>
                                 <ul class="sub-menu">
-                                    <!-- <li><a href="../Customers/NewCustomer.aspx" class="text-dark">New Customer</a></li> -->
+                                     <li><a href="../Customers/NewCustomer.aspx" class="text-dark">New Customer</a></li> 
                                 </ul>
                             </li>
                             <li><a href="#" class="text-dark">Places</a></li>

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace InventoryProject.User
+namespace InventoryProject.Users
 {
     public partial class UserList : System.Web.UI.Page
     {
