@@ -106,7 +106,7 @@
     </asp:ContentPlaceHolder>
 </head>
 
-<body>
+<body style="background-color:whitesmoke">
     <form id="form1" runat="server">
 
         <div class="container-fluid">
