@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InventoryProject.User
+namespace InventoryProject.Users
 {
 
 
