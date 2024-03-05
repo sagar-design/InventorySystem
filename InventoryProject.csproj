@@ -97,11 +97,11 @@
     <Content Include="Places\NewCountry.aspx" />
     <Content Include="Places\NewState.aspx" />
     <Content Include="Places\StatesList.aspx" />
-    <Content Include="Sales\POS.aspx" />
+    <Content Include="Sales\NewSales.aspx" />
     <Content Include="Sales\NewSalesReturn.aspx" />
     <Content Include="Sales\SalesList.aspx" />
     <Content Include="Sales\SalesReturnList.aspx" />
-    <Content Include="Sales\WebForm1.aspx" />
+    <Content Include="Sales\POS.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -220,12 +220,12 @@
     <Compile Include="LoginPages\ForgetPassword.aspx.designer.cs">
       <DependentUpon>ForgetPassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sales\POS.aspx.cs">
-      <DependentUpon>POS.aspx</DependentUpon>
+    <Compile Include="Sales\NewSales.aspx.cs">
+      <DependentUpon>NewSales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Sales\POS.aspx.designer.cs">
-      <DependentUpon>POS.aspx</DependentUpon>
+    <Compile Include="Sales\NewSales.aspx.designer.cs">
+      <DependentUpon>NewSales.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sales\NewSalesReturn.aspx.cs">
       <DependentUpon>NewSalesReturn.aspx</DependentUpon>
@@ -248,12 +248,12 @@
     <Compile Include="Sales\SalesReturnList.aspx.designer.cs">
       <DependentUpon>SalesReturnList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sales\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Sales\POS.aspx.cs">
+      <DependentUpon>POS.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Sales\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Sales\POS.aspx.designer.cs">
+      <DependentUpon>POS.aspx</DependentUpon>
     </Compile>
     <Compile Include="Users\NewUser.aspx.cs">
       <DependentUpon>NewUser.aspx</DependentUpon>

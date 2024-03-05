@@ -1,86 +1,119 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainMaster.Master" AutoEventWireup="true" CodeBehind="POS.aspx.cs" Inherits="InventoryProject.Sales.NewSales" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="POS.aspx.cs" Inherits="InventoryProject.Sales.WebForm1" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>POS</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <style>
+        .pad1 {
+            padding: 2rem;
+        }
+
+        .inline {
+            display: inline;
+        }
+
+        .w80 {
+            width: 80%;
+        }
+
+        .w90 {
+            width: 89%;
+        }
+    </style>
 
 
-    <div class="container" style="margin-top: -4rem">
-        <h1>Sales</h1>
-        &nbsp<h3>Add/Update Sales</h3>
-        <div class="block">
+</head>
+<body style="background-color: #343a40">
+    <form id="form1" runat="server">
 
-            <div class="row justify-content-center mb-2">
+        <div class="container-fluid mt-5">
+            <div class="row">
 
-                <div class="col-md-12 col-lg-12 pb-0 mx-auto">
-
-                    <div class="row justify-content-around">
-                        <div class="col-5">
-                            <div class="form-group" style="position: relative;">
-                                <label class="font-light" for="txtName">Customer Name<strong class="text-danger">*</strong></label>
-                                <asp:DropDownList ID="DropDownList1" CssClass="form-control w-75 d-inline" runat="server"></asp:DropDownList>
-                                <asp:Button ID="Button1" runat="server" Text="+" CssClass="btn btn-outline-secondary" />
-                            </div>
-                        </div>
-                        <div class="col-5">
-                            <div class="form-group">
-                                <label class="font-light" for="txtEmail">Sales Date</label><br />
-                                <asp:LinkButton ID="LinkButton1" CssClass="btn btn-outline-light btn-dark d-inline" runat="server">Cal</asp:LinkButton>
-                                <asp:TextBox ID="TextBox1" CssClass="form-control w-75 d-inline" runat="server" required></asp:TextBox>
-                                <asp:Calendar ID="Calendar1" runat="server" CssClass="w-100" Visible="false"></asp:Calendar>
-                            </div>
-                        </div>
-                    </div>
+                <%--left content--%>
+                <div class="col-lg-7 mx-3 bg-white pad1">
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-md-12">
+                            <label class="form-label fw-700" style="float: left; font-weight: 700; font-size: 2rem">Sales List</label>
+                            <asp:Button ID="Button1" CssClass="btn btn-primary" Style="float: right" runat="server" Text="+ create New" />
+                        </div>
 
-                            <div class="form-group">
-                                <label class="font-light" for="txtMobile">Reference Number</label>
-                                <asp:TextBox ID="txtMobile" class="form-control" runat="server" required></asp:TextBox>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <asp:DropDownList ID="ddlShowEntry" CssClass="form-control inline w90" runat="server">
+                                    <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="25" Value="25"></asp:ListItem>
+                                    <asp:ListItem Text="50" Value="50"></asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:Button ID="btnNewCustomer" CssClass="btn btn-primary" Style="float: right" runat="server" Text="+" />
                             </div>
                         </div>
-
-                        <div class="col-6">
-
-                            <div class="form-group">
-                                <label class="font-light" for="txtPinCode">Other Charges</label>
-                                <asp:TextBox ID="txtPinCode" class="form-control" runat="server" required></asp:TextBox>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server" Placeholder="Item Name/Item Code"></asp:TextBox>
                             </div>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label class="font-light" for="txtNote">Note</label>
-                        <asp:TextBox ID="txtNote" class="form-control" runat="server" TextMode="MultiLine" Rows="2" required></asp:TextBox>
-                    </div>
-
-
-                    <div class="row justify-content-evenly">
-                        <div class="col-12">
-                            <asp:Label ID="Label1" runat="server" Text="SubTotal"></asp:Label>
-                            <asp:Label ID="Label2" runat="server" Text="0.00" CssClass="mx-4"></asp:Label>
-                            <asp:Label ID="Label3" runat="server" Text="Other Charges" CssClass="mx-4"></asp:Label>
-                            <asp:Label ID="Label4" runat="server" Text="0.00"></asp:Label>
-                        </div>
-
-                        <div class="col-12">
-                            <asp:Label ID="Label5" runat="server" Text="Discount on all"></asp:Label>
-                            <asp:Label ID="Label6" runat="server" Text="0.00" CssClass="mx-4"></asp:Label>
-                            <asp:Label ID="Label7" runat="server" Text="Grand Total" CssClass="mx-4"></asp:Label>
-                            <asp:Label ID="Label8" runat="server" Text="0.00"></asp:Label>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <asp:GridView ID="GVPOS" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" ShowHeaderWhenEmpty="True">
+                                    <Columns>
+                                        <asp:BoundField DataField="ItemName" HeaderText="ItemName" />
+                                        <asp:BoundField DataField="Unit" HeaderText="Stock" />
+                                        <asp:BoundField  HeaderText="Quantity" />
+                                        <asp:BoundField DataField="SalesPrice" HeaderText="Price" />
+                                        <asp:BoundField HeaderText="Discount" />
+                                        <asp:BoundField DataField="Tax" HeaderText="Tax" />
+                                        <asp:BoundField  HeaderText="Subtotal" />
+                                    </Columns>
+                                </asp:GridView>
+                            </div>
                         </div>
                     </div>
-                    <br />
                 </div>
 
-                <asp:Button ID="btnSave" runat="server" CssClass="btn btn-dark btn-primary-hover-outline mx-3" Text="Save" />
-                <asp:Button ID="btnClose" runat="server" CssClass="btn btn-danger btn-dark-hover-outline" Text="Close" />
+
+                <%--right content--%>
+                <div class="col-lg-4 bg-white pad1">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="ddlShowEntry" class="form-label">Show Entries</label>
+                                <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server">
+                                    <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="25" Value="25"></asp:ListItem>
+                                    <asp:ListItem Text="50" Value="50"></asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="txtSearch" class="form-label">Search</label>
+                                <input type="text" class="form-control" id="txtSearch" placeholder="Enter search text">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <asp:GridView ID="GridView2" runat="server" CssClass="table table-bordered">
+                                </asp:GridView>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
 
             </div>
         </div>
-        <br />
-        <h4>Previous Payment Information</h4>
-        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
-    </div>
-</asp:Content>
+
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
