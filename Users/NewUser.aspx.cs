@@ -2,7 +2,9 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
+using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace InventoryProject.Users
 {
@@ -19,17 +21,30 @@ namespace InventoryProject.Users
         protected void BtnSave_Click(object sender, EventArgs e)
         {
             con.Open();
-
-            string directoryPath = Server.MapPath("~/UserImages/");
-
-            if (!Directory.Exists(directoryPath))
+            string photoPath = string.Empty;
+            if (FileProfilePicture.HasFile)
             {
-                Directory.CreateDirectory(directoryPath);
+                HttpPostedFile selectedFile = FileProfilePicture.PostedFile;
+                string contentType = selectedFile.ContentType;
+                if (contentType == "image/jpeg" || contentType == "image/png")
+                {
+                    string physicalPath = Server.MapPath("~/UserImages/");
+                    if (!Directory.Exists(physicalPath))
+                    {
+                        Directory.CreateDirectory(physicalPath);
+                    }
+                    photoPath = "~/UserImages/" + TxtUsername.Text + ".jpg";
+                    selectedFile.SaveAs(photoPath);
+                }
+                else
+                {
+                    Response.Write("<script>alert('Invalid format')</script>");
+                }
             }
-
-            string photoPath = "~/UserImages/" + TxtUsername.Text + ".jpg";
-
-            FileProfilePicture.SaveAs(Server.MapPath(photoPath));
+            else
+            {
+                Response.Write("<script>alert('Please select file')</script>");
+            }
 
             SqlCommand cmd = new SqlCommand("INSERT INTO NewUserTable VALUES (@p1, @p2, @p3, @p4, @p5, @p6)", con);
             cmd.Parameters.AddWithValue("@p1", TxtUsername.Text);
