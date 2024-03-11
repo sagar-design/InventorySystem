@@ -113,6 +113,11 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="LoginPages\ForgetPassword.aspx" />
+    <Content Include="Settings\ChangePassword.aspx" />
+    <Content Include="Settings\CompanyProfile.aspx" />
+    <Content Include="Settings\PaymentTypeList.aspx" />
+    <Content Include="Settings\SiteSettings.aspx" />
+    <Content Include="Settings\TaxList.aspx" />
     <Content Include="Supplier\NewSupplier.aspx" />
     <Content Include="Supplier\SuppliersList.aspx" />
     <Content Include="Users\NewUser.aspx" />
@@ -289,6 +294,41 @@
     <Compile Include="Sales\POS.aspx.designer.cs">
       <DependentUpon>POS.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Settings\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\CompanyProfile.aspx.cs">
+      <DependentUpon>CompanyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\CompanyProfile.aspx.designer.cs">
+      <DependentUpon>CompanyProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\PaymentTypeList.aspx.cs">
+      <DependentUpon>PaymentTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\PaymentTypeList.aspx.designer.cs">
+      <DependentUpon>PaymentTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\SiteSettings.aspx.cs">
+      <DependentUpon>SiteSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\SiteSettings.aspx.designer.cs">
+      <DependentUpon>SiteSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\TaxList.aspx.cs">
+      <DependentUpon>TaxList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\TaxList.aspx.designer.cs">
+      <DependentUpon>TaxList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Supplier\NewSupplier.aspx.cs">
       <DependentUpon>NewSupplier.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -352,7 +392,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Reports\" />
-    <Folder Include="Settings\" />
     <Folder Include="Users\UserImages\" />
   </ItemGroup>
   <PropertyGroup>
