@@ -59,7 +59,7 @@
 
         #menu {
             position: absolute;
-            width: 300px;
+            width: 16vw;
             padding: 50px;
             padding-top: 125px;
             background: #ededed;
@@ -75,7 +75,7 @@
 
             #menu li {
                 padding: 10px 0;
-                font-size: 22px;
+                font-size: 18px;
             }
 
         #menuToggle input:checked ~ ul {
@@ -91,7 +91,7 @@
             }
 
         .main-content {
-            margin-top: 50px; /* Adjusted top margin */
+            margin-top: 10px; /* Adjusted top margin */
             text-align: center; /* Center align the content */
         }
 
@@ -157,7 +157,7 @@
                 </div>
             </div>
             <!-- Main Content Area -->
-            <div class="col-md-8 main-content mx-auto">
+            <div class="col-md-10 main-content float-end">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
